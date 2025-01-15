@@ -28,7 +28,7 @@
         <div class="row py-3">
             <div class="col-12 col-lg-4">
                 <h1>Formulario Películas</h1>
-                <form class="p-3 mb-4 border" id="moviesForm" >
+                <form class="p-3 mb-4 bg-primary-subtle" id="moviesForm" >
 
                     <div class="mb-3">
                         <label for="title" class="form-label">Título película</label>
@@ -49,14 +49,15 @@
                             <option value="comedia">Comedia</option>
                             <option value="drama">Drama</option>
                             <option value="terror">Terror</option>
+                            <option value="western">Western</option>
                         </select> 
                     </div>
 
                     <div class="mb-3 row">
                         
                         <div class="col-6">
-                            <label for="date">Fecha de estreno</label>
-                            <input type="date" name="date" id="date" class="form-control" required>
+                            <label for="date">Año de estreno</label>
+                            <input type="number" min="1900" name="date" id="date" class="form-control" required>
                         </div>
 
                         <div class="col-6">
@@ -66,7 +67,13 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                <div class="d-flex justify-content-between">
+                    <button id="submitBtn" type="submit" class="btn btn-primary">Guardar</button>
+                    <button class="btn btn-secondary d-none" title="Cancelar edición" id="clear-form">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
 
                 </form>
             </div>
@@ -87,7 +94,16 @@
                 <thead>
                     <tr>
                         <th>Imagen</th>
-                        <th>Nombre</th>
+                        <th class="name-header-cell">
+                            <div class="name">
+                            Nombre
+                            <div class="sort-container">
+                                <i class="fa-solid fa-sort-up"></i>
+                                <i class="fa-solid fa-sort-down"></i>
+                            </div>
+
+                        </div>
+                        </th>
                         <th>Género</th>
                         <th>Valoración</th>
                         <th>Fecha Estreno</th>

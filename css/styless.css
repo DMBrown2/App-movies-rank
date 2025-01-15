@@ -6,11 +6,33 @@
             }
         }
     }
+
+    .name-header-cell {
+        .name {
+            display: flex;
+            align-items: center;
+        }
+
+        .sort-container {
+            display: flex;
+            flex-direction: column;
+
+            i {
+                    cursor: pointer;
+
+                    &:hover {
+                        color: royalblue;
+                    }
+            }
+        }
+    }
     
 
     .image-cell {
         img {
             width: 75px;
+            aspect-ratio: 2/3;
+            object-fit: cover;
         }
     }
 
